@@ -35,6 +35,21 @@ body{
   
 }
 
+.wrapper{
+
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--dark-cyan);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  z-index: -1;
+  overflow: clip;
+
+}
+
 .background-svg{
   position: relative;
   z-index: -1;
@@ -44,13 +59,14 @@ body{
   position: absolute;
   left: -850px;
   top: -680px;
+  overflow: clip;
 }
 
 .bottom-svg{
   position: absolute;
   left: 100px;
   top: 210px;
-  overflow: hidden;
+  overflow: clip;
 }
 
 
@@ -124,8 +140,26 @@ strong{
 .attribution { 
   margin-top: 20px;
   font-size: 11px; 
+  max-width: 350px;
   text-align: center; 
 }
 .attribution a { 
   color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (max-width: 768px) {
+
+  body{
+    overflow: hidden;
+  }
+
+  .card{
+    height: 38vh;
+  }
+
+  .bottom-svg{
+    top: 150px;
+    overflow: hidden;
+  }
+  
 }
